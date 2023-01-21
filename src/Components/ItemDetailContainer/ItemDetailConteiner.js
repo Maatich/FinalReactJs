@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import useFirebase from '../../Hook/useFirebase'
+import useFirebase  from '../../Hook/useFirebase'
 import ItemDetail from '../ItemDetail/ItemDetail'
+
 
 const ItemDetailContainer = () => {
 
