@@ -25,7 +25,7 @@ const Navbar = () => {
                         <li className="nav-item"><a className="nav-link active" aria-current="page" href="/Servicios">Servicios</a></li>
                     </ul>
                     
-                        <button className="btn btn-primary" type="button" onClick={() => buyProducts(producto)} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
+                        <button className="btn btn-primary" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
                     
                     
                 </div>

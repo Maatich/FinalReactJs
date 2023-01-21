@@ -1,31 +1,21 @@
-import { useEffect } from 'react'
-import React from 'react'
-import { useState } from 'react'
-import { useContext } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import useFirebase  from '../../Hook/useFirebase'
+import useFirebase from '../../Hook/useFirebase'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import { CartContext } from '../../Context/CarritoContext'
 
 const ItemDetailContainer = () => {
 
   const { id } = useParams();
-  const { producto, getProduct } = useFirebase();
-  const { addToCart } = useContext(CartContext);
-  const [added, setAdded] = useState(false);
+
+  const { producto, getProduct } = useFirebase()
 
   useEffect(() => {
-    getProduct(id);
-  }, []);
-
-  const onAdd = (count) => {
-    addToCart(producto, count);
-    setAdded(true); // seteo en tru cuando es agregado el producto
-  }
+    getProduct(id)
+  }, [id])
 
   return (
     <>
-      <ItemDetail product={producto} onAdd={onAdd} added={added}/>
+      <ItemDetail productos={producto} />
     </>
   )
 

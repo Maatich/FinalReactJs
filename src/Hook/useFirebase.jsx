@@ -1,48 +1,45 @@
-import { useState } from "react"
-import { db } from "../Firebase/Index"
-import { collection, getDocs, getDoc, doc } from "firebase/firestore"
+import { useState } from 'react'
+import { db } from '../Firebase/Index'
+import { collection, doc, getDocs, getDoc, query, where } from 'firebase/firestore'
 
-const useFirebase = () => {
+export const useFirebase = () => {
 
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState([]);
     const [producto, setProducto] = useState({});
 
-
-    const getProducts = async () => {
-
+    const getProducts = async (id) => {
         try {
-            const prodColl = collection(db, 'productos')
-            const snapshot = await getDocs(prodColl)
-            const result = snapshot.docs.map((doc) => doc = { id: doc.id, ...doc.data() })
-            console.log("Items en firebase: ", result)
-            setProductos(result)
+            const prodCol = id ? query(collection(db, "productos"), where("categoria", "==", id)) : collection(db, 'productos')
+            await getDocs(prodCol).then((snapshot) => {
+                if (snapshot.size === 0) {
+                    console.log("Base de datos esta vacio")
+                }
+                setProductos(snapshot.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }))
+            })
         } catch (error) {
-            console.log(error)
+
         }
     }
 
-
-
-
     const getProduct = async (id) => {
-        //setLoading(true)
         try {
-            const document = doc(db, "productos", id)
+            const document = doc(db, 'productos', id)
             const response = await getDoc(document)
-            //let result =response.data()
+            response.data()
             setProducto({ id: response.id, ...response.data() })
 
 
         } catch (error) {
-            console.log(producto)
+
         }
-    };
-    return {
-        productos,
-        producto,
-        getProducts,
-        getProduct
     }
+
+    return { productos, getProducts, getProduct, producto }
 }
 
-export default useFirebase
+export default useFirebase;

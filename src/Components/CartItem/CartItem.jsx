@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartItem = ({product, deleteItem}) => {
+const CartItem = ({producto, deleteItem}) => {
   return (
     <div>
 
@@ -10,9 +10,9 @@ const CartItem = ({product, deleteItem}) => {
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-              <p> {product.item.nombre} </p>
-              <p> {product.count} </p>
-              <p> {product.item.precio} </p>
+              <p> {producto.item.nombre} </p>
+              <p> {producto.count} </p>
+              <p> {producto.item.precio} </p>
               <button onClick={deleteItem}> Eliminar producto </button>
               <p></p>
               <p></p>
