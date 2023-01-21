@@ -1,22 +1,23 @@
 import React from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CarritoContext'
-
-import Modals from '../modals/Modals';
-
-
-
-
-
+import CartItem from '../CartItem/CartItem';
 
 const Cart = () => {
 
-    const {carrito} = useContext(CartContext);
-  console.log (carrito)
+  const { cartArray, deleteItem } = useContext(CartContext);
+
+
   return (
     <div>
-        <h1>Cart</h1>
-        {carrito.map(prod => <Modals key={prod.item.id} product={prod}  />)}
+      {cartArray.length === 0 &&
+        <div>
+          <p>No hay productos aún</p>
+          <Link to='/'>Ir al inicio</Link>
+        </div>
+      }
+      {(cartArray.length > 0) && cartArray.map(prod => <CartItem key={prod.item.id} product={prod} deleteItem={deleteItem} />)}
     </div>
   )
 }
