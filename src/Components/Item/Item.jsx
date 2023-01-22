@@ -13,7 +13,7 @@ const Item = ({product}) => {
             <div className="card mb-3 p-2" style={{ width: 740 }}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                    <div style={{backgroundImage:`url('${product.img}')`, backgroundSize:'cover', backgroundPosition:'center', width:'100%', height:'100%'}}/>
+                    <div style={{backgroundImage:`url('${product.image}')`, backgroundSize:'cover', backgroundPosition:'center', width:'100%', height:'100%'}}/>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">

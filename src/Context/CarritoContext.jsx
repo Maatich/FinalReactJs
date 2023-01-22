@@ -35,7 +35,7 @@ const CartProvider = ({ children }) => {
     }
 
     const getTotalPrice = () => {
-        return cart.reduce((prev, act) => prev + act.count * act.price, 0)
+        return cart.reduce((prev, act) => prev + act.count * act.precio, 0)
     }
 
     const getItemTotalCount = () => {

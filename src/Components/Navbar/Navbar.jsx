@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import {CartContext } from '../../Context/CarritoContext'
 import useFirebase from '../../Hook/useFirebase'
 
@@ -21,10 +22,12 @@ const Navbar = () => {
                     aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Home</a></li>
-                        <li className="nav-item"><a className="nav-link active" aria-current="page" href="/Servicios">Servicios</a></li>
+                        <li className="nav-item"><Link className="nav-link active" to={'/'}>Home</Link> </li>
+                        <li className="nav-item"><Link className="nav-link active" to={'/categoria/servicio'}>Servicios</Link> </li>
+                        <li className="nav-item"><Link className="nav-link active" to={'/categoria/producto'}>Productos</Link> </li>
                     </ul>
                     
+                        <button className="btn btn-dark"></button>
                         <button className="btn btn-primary" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
                     
                     

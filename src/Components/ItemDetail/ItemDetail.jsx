@@ -8,25 +8,25 @@ import ItemCount from '../ItemCount/ItemCount';
 const ItemDetail = ({ productos }) => {
 
   const { addToCart, getTotalPrice, getItemTotalCount, getQuantity } = useContext(CartContext);
- 
+
   const [purchase, setPurchase] = useState(false)
   const handleAddToCart = (count) => {
     addToCart(productos, count);
     setPurchase(true)
   }
-  console.log (productos)
+  console.log(productos)
 
   return (
     <section className="bg-ligth">
       <div className="container pb-5">
         <div className="row">
           <div className="col-lg-5 mt-5">
-          <div className="card mb-3">
+            <div className="card mb-3">
               <img className="card-img img-fluid" src={productos.image} alt="" />
             </div>
           </div>
           <div className="col-lg-7 mt-5">
-            
+
             <div className="card">
               <div className="card-body">
                 <h2>{productos.nombre}</h2>
@@ -47,16 +47,19 @@ const ItemDetail = ({ productos }) => {
             </div>
           </div>
         </div>
-        <ul className="list-unstyled pb-3">
-          <li>Precio total: {getTotalPrice()}</li>
-        </ul>
-        <ul className="list-unstyled pb-3">
-          <li>Items totales: {getItemTotalCount()}</li>
-        </ul>
-        <ul className="list-unstyled pb-3">
-          <Link to='/Cart'><button>Ir al carrito</button></Link>
-        </ul>
+        <div className='Container d-flex row'>
+          <ul className="list-unstyled pb-3">
+            <li>Precio total: {getTotalPrice()}</li>
+          </ul>
+          <ul className="list-unstyled pb-3">
+            <li>Items totales: {getItemTotalCount()}</li>
+          </ul>
+          <ul className="list-unstyled pb-3">
+            <Link to='/Cart'><button>Ir al carrito</button></Link>
+          </ul>
+        </div>
       </div>
+
     </section>
 
   );
