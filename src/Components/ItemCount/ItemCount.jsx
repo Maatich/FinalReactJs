@@ -22,7 +22,7 @@ const ItemCount = ({initial, stock, onAddToCart}) => {
         <>{stock > 0 ? <>
            
             <button type="button" className="btn btn-success" key={count} onClick={() => restar()}>-</button>
-            <button type="button" className=" rounded btn-outline-dark"> {count} </button>
+            <button type="button" className="rounded btn-outline-dark"> {count} </button>
             <button type="button" className="btn btn-success" key={count >= 1} onClick={() => agregar()}>+</button>
             <br />
             <button type="button" className="btn btn-success" onClick={() => { onAddToCart(count); }}>Agregar al carrito</button>

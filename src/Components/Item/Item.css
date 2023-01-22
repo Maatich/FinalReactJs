@@ -1,0 +1,17 @@
+.containerProductos {
+    width: 100%;
+    height: auto;
+    
+    justify-content: space-evenly;
+    
+    padding: 5rem;
+}
+
+.card-prod {
+    width: 30%;
+}
+
+.img-prod { 
+    align-items: center;
+    width: 25rem;
+}

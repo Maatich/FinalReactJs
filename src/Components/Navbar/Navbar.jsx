@@ -27,7 +27,7 @@ const Navbar = () => {
                         <li className="nav-item"><Link className="nav-link active" to={'/categoria/producto'}>Productos</Link> </li>
                     </ul>
                     
-                        <button className="btn btn-dark"></button>
+                        <button className="btn "></button>
                         <button className="btn btn-primary" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrito</button>
                     
                     

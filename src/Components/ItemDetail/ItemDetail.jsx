@@ -25,7 +25,7 @@ const ItemDetail = ({ productos }) => {
               <img className="card-img img-fluid" src={productos.image} alt="" />
             </div>
           </div>
-          <div className="col-lg-7 mt-5">
+          <div className="col-lg-7 mt-10">
 
             <div className="card">
               <div className="card-body">
@@ -45,19 +45,20 @@ const ItemDetail = ({ productos }) => {
                 </ul>
               </div>
             </div>
+            <div className='ContainerAdd d-flex row'>
+              <ul className="list-unstyled pb-3">
+                <li>Precio total: {getTotalPrice()}</li>
+              </ul>
+              <ul className="list-unstyled pb-3">
+                <li>Items totales: {getItemTotalCount()}</li>
+              </ul>
+              <ul className="list-unstyled pb-3">
+                <Link to='/Cart' ><button className="btn btn-primary" >Ir al carrito</button></Link>
+              </ul>
+            </div>
           </div>
         </div>
-        <div className='Container d-flex row'>
-          <ul className="list-unstyled pb-3">
-            <li>Precio total: {getTotalPrice()}</li>
-          </ul>
-          <ul className="list-unstyled pb-3">
-            <li>Items totales: {getItemTotalCount()}</li>
-          </ul>
-          <ul className="list-unstyled pb-3">
-            <Link to='/Cart'><button>Ir al carrito</button></Link>
-          </ul>
-        </div>
+
       </div>
 
     </section>

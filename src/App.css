@@ -2,10 +2,15 @@
   text-align: center;
 }
 body {
-  background-color: black;
+  background-color: white;
 }
 
-.Conteiner {background-color: white;}
+.ContainerAdd {
+  background-color: white;
+  border: 1px solid black;
+
+
+}
 
 .App-logo {
   height: 40vmin;

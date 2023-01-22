@@ -13,7 +13,7 @@ const Cart = () => {
       <div>
         {cart.map(item =>
           <div>
-            <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+             <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div className="offcanvas-header">
                 <h5 className="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -22,7 +22,12 @@ const Cart = () => {
                 <div className="card w-80">
                   <div className="card-body" key={item.id}>
                     <h5 className="card-title">{item.nombre}</h5>
-                    <p className="card-text">descripcion: {item.categoria}</p>
+                    <p className="card-text">
+                      Categoria: {item.categoria}</p>
+                      <p className="card-text">
+                      Codigo: {item.id}</p>
+                      <p className="card-text">
+                      Precio: $ {item.precio}</p>
                     <div >
                       <button type="button" className="btn btn-outline-danger" onClick={() => removeItem(item.id)} >Eliminar</button>
                     </div>
@@ -30,10 +35,10 @@ const Cart = () => {
                 </div>
                 <div>
                   <div>
-                    <p>total item carro: {getItemTotalCount()}</p>
-                    <p>precio total carro: ${getTotalPrice()}</p>
+                    <p>Numero de productos: {getItemTotalCount()}</p>
+                    <p>Precio Total $ {getTotalPrice()}</p>
                     <button type="button" className="btn btn-outline-danger" onClick={clearCart}>Vaciar carrito</button>
-                    <Link to={'/Checkout'}>Comprar</Link>
+                    <Link to={'/Checkout'}> <button class="btn btn-success">Comprar</button> </Link>
                   </div>
                 </div>
               </div>

@@ -7,7 +7,9 @@ const CartWidget = () => {
     const { productCounter } = useContext(CartContext)
   return (
     <>
-    <BsCart3 style={{height: '50px'}}/>{productCounter() > 0 && <Badge bg="secondary">{productCounter()}</Badge>}
+    <div>
+      
+    </div>
     </>
   )
 }
