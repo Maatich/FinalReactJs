@@ -2,7 +2,8 @@
   text-align: center;
 }
 body {
-  background-color: white;
+  background-color: black;
+  
 }
 
 .ContainerAdd {
@@ -31,7 +32,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: Dark;
 }
 
 .App-link {

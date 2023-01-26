@@ -19,8 +19,8 @@ const ItemCount = ({initial, stock, onAddToCart}) => {
     }
 
     return (
-        <>{stock > 0 ? <>
-           
+        <>{stock > 0 ? 
+        <>   
             <button type="button" className="btn btn-success" key={count} onClick={() => restar()}>-</button>
             <button type="button" className="rounded btn-outline-dark"> {count} </button>
             <button type="button" className="btn btn-success" key={count >= 1} onClick={() => agregar()}>+</button>

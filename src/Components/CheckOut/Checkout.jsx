@@ -2,11 +2,12 @@ import { addDoc, collection } from 'firebase/firestore'
 import React, { useContext, useState } from 'react'
 import { db } from '../../Firebase/Index'
 import { CartContext } from '../../Context/CarritoContext'
+import '../CheckOut/checkout.css'
 
 const Checkout = () => {
   const [comprador, setComprador] = useState({})
   const [orderId, setOrderId] = useState('')
-  const { cart, getTotalPrice, getItemTotalCount, clearCart } = useContext(CartContext)
+  const { cart, getTotalPrice, handleDelete, clearCart } = useContext(CartContext)
   const datosComprador = (e) => {
     setComprador({
       ...comprador,
@@ -35,35 +36,51 @@ const Checkout = () => {
   }
   return (
     <>
-      {orderId ? <p>Muchas gracias por su compra, su orden es: {orderId}</p>
-        : <div className="container-fluid">
+      {orderId ? <p className='container bg-ligth'>Muchas gracias por su compra, su orden es: <b>{orderId}</b></p>
+        : <div className="container-fluid formconteiner">
 
           {cart.map(item =>
-            <div key={item.id}>
-              <p>titulo{item.titulo}</p>
-              <p>descripcion: {item.descripcion}</p>
+            <div key={item.id} >
+              <div className="card mb-3" style="max-width: 540px;">
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h5 className="card-title">{item.nombre}</h5>
+                    <p className="card-text"> Cantidad : {item.cantidad}</p>
+                    <p className="card-text">{item.precio}</p>
+                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <button variant='danger' onClick={handleDelete}> </button>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
-          <p>total item carro: {getItemTotalCount()}</p>
-          <p>precio total carro: ${getTotalPrice()}</p>
-          <form onSubmit={finalizarCompra}>
-            <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">Nombre y apelllido:</label>
-              <input type="text" className="form-control" placeholder="Lucas Barbieri" name='name' onChange={datosComprador} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">N° de contacto:</label>
-              <input type="text" className="form-control" placeholder="1122664022" name='phone' onChange={datosComprador} />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">E-Mail:</label>
-              <input type="email" className="form-control" placeholder="email@gmail.com" name='email' onChange={datosComprador} />
-            </div>
-            <div className="mb-3">
-              <button className="btn" type='submit'>Finalizar </button>
-            </div>
-          </form>
-        </div>}
+          <div className='container'>
+
+            <form className='container formulario' onSubmit={finalizarCompra}>
+              <div className='container p-3 text-aling-center'>
+                <h1>Formulario de Compra</h1>
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="exampleFormControlInput1" className="form-label">Nombre y apelllido:</label>
+                <input type="text" className="form-control" placeholder="ingrese su nombre y apellido" name='name' onChange={datosComprador} />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleFormControlInput1" className="form-label">N° de contacto:</label>
+                <input type="text" className="form-control" placeholder="11********" name='phone' onChange={datosComprador} />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleFormControlInput1" className="form-label">E-Mail:</label>
+                <input type="email" className="form-control" placeholder="ejemplo@gmail.com" name='email' onChange={datosComprador} />
+              </div>
+              <div className="mb-3">
+                <button className="btn btn-primary" type='submit'>Finalizar </button>
+              </div>
+            </form>
+            <br />
+          </div>
+        </div>
+      }
     </>
   )
 }

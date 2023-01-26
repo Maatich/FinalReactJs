@@ -11,7 +11,7 @@ const Modals = ({ product, deleteItem }) => {
   return (
     <div>
       
-      )
+      
     </div>
   )
 }

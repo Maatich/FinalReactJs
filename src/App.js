@@ -8,6 +8,7 @@ import ItemDetailConteiner from './Components/ItemDetailContainer/ItemDetailCont
 import Modals from './Components/modals/Modals';
 import Checkout from './Components/CheckOut/Checkout';
 import Carrousel from './Components/Carrousel/Carrousel';
+import { Footer } from './Components/Footer/Footer';
 
 
 function App() {
@@ -17,9 +18,9 @@ function App() {
   return (
     <CartContext>
       <Router>
-        <Navbar/>
-        <Modals/>
-        <Carrousel/>
+        <Navbar />
+        <Modals />
+        <Carrousel />
         <Routes>
           <Route path="/" element={<ItemListConteiner />} />
           <Route path="/Servicios" element={<ItemListConteiner />} />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Checkout" element={<Checkout />} />
         </Routes>
+        <Footer />
       </Router>
     </CartContext>
   );

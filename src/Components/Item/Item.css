@@ -1,17 +1,22 @@
-.containerProductos {
-    width: 100%;
-    height: auto;
-    
-    justify-content: space-evenly;
-    
-    padding: 5rem;
-}
-
 .card-prod {
-    width: 30%;
+    width: 18rem;
 }
 
-.img-prod { 
-    align-items: center;
-    width: 25rem;
+.img-prod {
+    height: 20rem;
 }
+
+.titulosCard {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}
+.texto{
+    font-family: 'Rubik', sans-serif;
+}
+
+.cardStyle {
+
+    box-shadow: 0px 0px 15px lightblue;
+}
+
+
