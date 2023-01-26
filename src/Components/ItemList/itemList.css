@@ -1,6 +1,7 @@
 .titular {
+    color: white;
+}
+.titular h1 {
     text-align: center;
     align-content: center;
-    align-items: center;
-    color: white;
 }
