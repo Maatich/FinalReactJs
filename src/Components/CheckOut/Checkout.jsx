@@ -36,12 +36,12 @@ const Checkout = () => {
   }
   return (
     <>
-      {orderId ? <p className='container bg-ligth'>Muchas gracias por su compra, su orden es: <b>{orderId}</b></p>
+      {orderId ? <p className='container text-bg-ligth'>Muchas gracias por su compra, su orden es: <b>{orderId}</b></p>
         : <div className="container-fluid formconteiner">
 
           {cart.map(item =>
             <div key={item.id} >
-              <div className="card mb-3" style="max-width: 540px;">
+              <div className="card carts mb-3" >
                 <div className="col-md-8">
                   <div className="card-body">
                     <h5 className="card-title">{item.nombre}</h5>

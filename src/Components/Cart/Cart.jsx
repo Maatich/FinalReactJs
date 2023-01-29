@@ -54,7 +54,7 @@ const Cart = () => {
                     <p>Numero de productos: {getItemTotalCount()}</p>
                     <p>Precio Total $ {getTotalPrice()}</p>
                     <button type="button" className="btn btn-outline-danger" onClick={clearCart}>Vaciar carrito</button>
-                    <Link to={'/Checkout'}> <button class="btn btn-success">Comprar</button> </Link>
+                    <Link to={'/Checkout'}> <button className="btn btn-success">Comprar</button> </Link>
                   </div>
                 </div>
               </div>

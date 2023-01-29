@@ -15,9 +15,9 @@ const Navbar = () => {
         <nav className="navbar menuss navbar-expand-lg navbar-light bg-dark">
             <div className="container  px-4 px-lg-5">
                 <a className="navbar-brand logo text-light" href="#!"> <strong> Tienda Online</strong></a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button className="navbar-toggler boton" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
+                    aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0  ms-lg-4">
                         <li className="nav-item"><Link className="nav-link active text-light" to={'/'}>Home</Link> </li>
@@ -32,12 +32,12 @@ const Navbar = () => {
                         Categorias
                     </button>
                     <ul className="dropdown-menu">
-                        <li><button className="dropdown-item" type="button">Diseño Web</button></li>
-                        <li><button className="dropdown-item" type="button">Base de Datos</button></li>
-                        <li><button className="dropdown-item" type="button">Secure Serv</button></li>
-                        <li><button className="dropdown-item" type="button">Hosting</button></li>
-                        <li><button className="dropdown-item" type="button">Backups</button></li>
-                        <li><button className="dropdown-item" type="button">Servicios Informaticos</button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/producto'}> Diseño Web </Link></button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/servicio'}>Base de Datos</Link></button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/secure'}>Secure Serv</Link></button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/hosting'}>Hosting</Link></button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/backup'}>Backups</Link></button></li>
+                        <li><button className="dropdown-item" type="button"><Link to={'/categoria/informaticos'}>Servicios Informaticos</Link></button></li>
                     </ul>
                 </div>
             </div>
