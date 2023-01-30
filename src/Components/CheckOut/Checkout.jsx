@@ -36,7 +36,7 @@ const Checkout = () => {
   }
   return (
     <>
-      {orderId ? <p className='container text-bg-ligth'>Muchas gracias por su compra, su orden es: <b>{orderId}</b></p>
+      {orderId ? <p className='container final'>Muchas gracias por su compra, su orden es: <b>{orderId}</b></p>
         : <div className="container-fluid formconteiner">
 
           {cart.map(item =>

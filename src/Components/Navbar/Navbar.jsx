@@ -14,7 +14,7 @@ const Navbar = () => {
 
         <nav className="navbar menuss navbar-expand-lg navbar-light bg-dark">
             <div className="container  px-4 px-lg-5">
-                <a className="navbar-brand logo text-light" href="#!"> <strong> Tienda Online</strong></a>
+                <a className="navbar-brand logo text-light" href="/"> <strong> Tienda Online</strong></a>
                 <button className="navbar-toggler boton" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation"><i className="bi bi-bag"></i></button>
